@@ -1,0 +1,23 @@
+[build-system]
+requires = ["hatchling>=1.24"]
+build-backend = "hatchling.build"
+
+[project]
+name = "modbustcp_flood"
+version = "1.0.0"
+description = "Launch modbustcp-flood attack on hosts"
+readme = "README.md"
+requires-python = ">=3.13.5"
+license = "MIT"
+authors = [{ name="Colorenzo", email="lorenzo2berardi@gmail.com" }]
+
+dependencies = [
+  "pymodbus>=3.6,<4"
+]
+
+[project.scripts]
+modbustcp-flood = "modbustcp_flood.mfa:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/modbustcp_flood"]
+
