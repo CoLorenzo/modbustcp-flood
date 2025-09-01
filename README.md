@@ -29,13 +29,14 @@ pipx uninstall modbustcp-flood
 ## Usage
 
 ```text
-usage: modbustcp-flood [-h] -a ADDRESS [-p PORT]
+usage: mfa.py [-h] -a ADDRESS [-p PORT] [-t TIME]
 
 options:
   -h, --help            show this help message and exit
   -a, --address ADDRESS
                         Server Address
-  -p, --port PORT       Server port (optional; default: 502)
+  -p, --port PORT       Server port
+  -t, --time TIME       Duration of the flood in seconds
 ```
 
 ### Examples
@@ -50,6 +51,18 @@ Use a non-standard port (e.g., 1502):
 
 ```bash
 modbustcp-flood -a 192.168.1.50 -p 1502
+```
+
+Flood for 30 seconds:
+
+```bash
+modbustcp-flood -a 192.168.1.50 -t 30
+```
+
+Flood for 60 seconds on a custom port:
+
+```bash
+modbustcp-flood -a 192.168.1.50 -p 1502 -t 60
 ```
 
 Stop with `Ctrl+C`.
